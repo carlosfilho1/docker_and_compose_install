@@ -3,7 +3,7 @@
 # Script para instalar Docker e Docker Compose v2
 set -e
 
-COMPOSE_VERSION="v2.26.1"
+COMPOSE_VERSION="v2.36.1"
 INSTALL_DIR="$HOME/.docker/cli-plugins"
 PLUGIN_PATH="$INSTALL_DIR/docker-compose"
 
