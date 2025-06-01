@@ -32,7 +32,7 @@ if ! command -v docker &> /dev/null; then
       $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
     sudo apt-get update
-    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker compose-plugin
 
     echo "✅ Docker instalado com sucesso."
 else
@@ -43,14 +43,14 @@ fi
 # Remover docker-compose (v1), se existir
 # ─────────────────────────────────────────────────────────────
 if command -v docker-compose &> /dev/null; then
-    echo "🧹 Removendo docker-compose (v1) obsoleto..."
+    echo "🧹 Removendo docker compose (v1) obsoleto..."
 
-    DC_PATH=$(command -v docker-compose)
+    DC_PATH=$(command -v docker compose)
     sudo rm -f "$DC_PATH"
 
-    echo "✅ docker-compose (v1) removido: $DC_PATH"
+    echo "✅ docker compose (v1) removido: $DC_PATH"
 else
-    echo "✅ docker-compose (v1) não está instalado. Nenhuma ação necessária."
+    echo "✅ docker compose (v1) não está instalado. Nenhuma ação necessária."
 fi
 
 
